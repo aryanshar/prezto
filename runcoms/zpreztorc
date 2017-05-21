@@ -25,6 +25,7 @@ zstyle ':prezto:*:*' color 'yes'
 # The order matters.
 zstyle ':prezto:load' pmodule \
   'environment' \
+  'command-not-found' \
   'terminal' \
   'editor' \
   'history' \
@@ -32,7 +33,11 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
+  'git' \
+  'pacman' \
+  'syntax highlighting' \
   'prompt'
+
 
 #
 # Autosuggestions
@@ -62,7 +67,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # zstyle ':prezto:module:git:status:ignore' submodules 'all'
 
 #
-# GNU Utility
+#GNU Utility
 #
 
 # Set the command prefix on non-GNU systems.
@@ -79,14 +84,14 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # zstyle ':prezto:module:history-substring-search:color' not-found ''
 
 # Set the search globbing flags.
-# zstyle ':prezto:module:history-substring-search' globbing-flags ''
+#zstyle ':prezto:module:history-substring-search' globbing-flags ''
 
 #
 # Pacman
 #
 
 # Set the Pacman frontend.
-# zstyle ':prezto:module:pacman' frontend 'yaourt'
+zstyle ':prezto:module:pacman' frontend 'yaourt'
 
 #
 # Prompt
@@ -130,19 +135,19 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
-# zstyle ':prezto:module:syntax-highlighting' highlighters \
-#   'main' \
-#   'brackets' \
-#   'pattern' \
-#   'line' \
-#   'cursor' \
-#   'root'
-#
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+   'main' \
+   'brackets' \
+   'pattern' \
+   'line' \
+   'cursor' \
+   'root'
+
 # Set syntax highlighting styles.
-# zstyle ':prezto:module:syntax-highlighting' styles \
-#   'builtin' 'bg=blue' \
-#   'command' 'bg=blue' \
-#   'function' 'bg=blue'
+#zstyle ':prezto:module:syntax-highlighting' styles \
+    #'builtin' 'bg=red' \
+    #'command' 'bg=blue' \
+    #'function' 'bg=blue'
 #
 # Set syntax pattern styles.
 # zstyle ':prezto:module:syntax-highlighting' pattern \
@@ -153,13 +158,13 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 #
 
 # Auto set the tab and window titles.
-# zstyle ':prezto:module:terminal' auto-title 'yes'
+zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Set the window title format.
-# zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
+zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
 
 # Set the tab title format.
-# zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
+zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
 
 # Set the terminal multiplexer title format.
 # zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
