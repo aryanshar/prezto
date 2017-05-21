@@ -250,16 +250,17 @@ prompt_battery() {
        symbol="\u26A1"
        color=blue
      fi
+     if [[ $(tput cols) -gt 125 ]]; then
+       prompt_segment_backwards $color black "$symbol $(battery_charge)"
+     elif [[ $(battery_level) -ge 20 ]]; then
+       prompt_segment_backwards $color black "$symbol"
+     else
+       prompt_segment_backwards $color black "$symbol $(battery_level)%%"
+     fi
    else
      color=green
      symbol="\u2615"
-   fi
-   if [[ $(tput cols) -gt 125 ]]; then
-     prompt_segment_backwards $color black "$symbol $(battery_charge)"
-   elif [[ $(battery_level) -ge 20 ]]; then
      prompt_segment_backwards $color black "$symbol"
-   else
-     prompt_segment_backwards $color black "$symbol $(battery_level)%%"
    fi
  }
  
